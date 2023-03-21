@@ -1,0 +1,998 @@
+/* Start variables */
+:root {
+   scroll-behavior: smooth;
+   --main-color: #19c8fa;
+   --p-color: #777;
+   --section-padding: 100px;
+   --transparent-background: #19c9fa9c;
+}
+/* End variables */
+/* Start components */
+.main-heading {
+   text-align: center;
+}
+.main-heading h2 {
+   font-weight: normal;
+   text-transform: uppercase;
+   margin-bottom: 70px;
+   position: relative;
+   font-size: 40px;
+   letter-spacing: 1.5px;
+}
+.main-heading h2::before {
+   content: "";
+   position: absolute;
+   height: 2px;
+   width: 150px;
+   background: #333;
+   left: 50%;
+   transform: translateX(-50%);
+   bottom: -30px;
+}
+.main-heading h2::after {
+   content: "";
+   position: absolute;
+   width: 14px;
+   height: 14px;
+   background: #fff;
+   border: 2px solid #333;
+   border-radius: 50%;
+   bottom: -37px;
+   left: 50%;
+   transform: translateX(-50%);
+}
+.main-heading p {
+   color: var(--p-color);
+   width: 550px;
+   max-width: 100%;
+   margin: 0 auto 100px;
+   line-height: 2;
+}
+/* End components */
+/* Start global rules */
+* {
+   -webkit-border-sizing: border-box;
+   -moz-border-sizing: border-box;
+   -ms-border-sizing: border-box;
+   -o-border-sizing: border-box;
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+ul {
+   list-style: none;
+}
+body {
+   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.container {
+   margin: 0 auto;
+   padding: 0 15px;
+}
+/* Small */
+@media (min-width: 768px) {
+   .container {
+      width: 750px;
+   }
+}
+/* Medium */
+@media (min-width: 992px) {
+   .container {
+      width: 980px;
+   }
+}
+/* Large */
+@media (min-width: 1200px) {
+   .container {
+      width: 1170px;
+   }
+}
+/* End global rules */
+/* Start header */
+header {
+   position: absolute;
+   width: 100%;
+   z-index: 3;
+}
+header .container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: relative;
+}
+header .container::before {
+   content: "";
+   position: absolute;
+   height: 1px;
+   width: calc(100% - 30px);
+   left: 15px;
+   bottom: 0;
+   background-color: white;
+}
+header .container .logo img {
+   height: 40px;
+}
+header .container nav {
+   display: flex;
+   flex: 1;
+   justify-content: flex-end;
+   align-items: center;
+}
+header .container nav button {
+   background-color: transparent;
+   border: none;
+   color: white;
+   font-size: 22px;
+}
+@media (min-width: 768px) {
+   header .container nav button {
+      display: none;
+   }
+}
+header .container nav ul {
+   display: flex;
+}
+@media (max-width: 767px) {
+   header .container nav ul {
+      display: none;
+   }
+   header .container nav button:focus + ul {
+      flex-direction: column;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      display: flex;
+      background-color: rgba(0, 0, 0, 0.349);
+   }
+}
+header .container nav ul li a {
+   color: white;
+   text-decoration: none;
+   padding: 30px 10px;
+   display: block;
+   text-transform: uppercase;
+   position: relative;
+   border-bottom: 1px solid transparent;
+   transition: border, color 0.5s;
+   font-size: 14px;
+}
+@media (max-width: 767px) {
+   header .container nav ul li a {
+      padding: 20px;
+   }
+}
+header .container nav ul li a.active,
+header .container nav ul li a:hover {
+   color: var(--main-color);
+   border-bottom: 1px solid var(--main-color);
+}
+header .container nav .form {
+   width: 40px;
+   height: 30px;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   border-left: 1px solid white;
+   margin-left: 20px;
+   color: white;
+   font-size: 18px;
+}
+/* End header */
+/* Start landing */
+section.landing {
+   background-image: url("../images/andyone--WW8jBak7bo-unsplash.jpg");
+   background-size: cover;
+   height: 100vh;
+   position: relative;
+}
+section.landing::before {
+   content: "";
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.493);
+   top: 0;
+   left: 0;
+   position: absolute;
+}
+section.landing .text {
+   background-color: var(--transparent-background);
+   color: white;
+   padding: 30px;
+   line-height: 2;
+   width: 550px;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 18px;
+}
+section.landing .text::after {
+   content: "";
+   width: 100%;
+   position: absolute;
+   height: 100%;
+   background-color: inherit;
+   left: -100%;
+   top: 0;
+}
+@media (max-width: 767px) {
+   section.landing .text {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 30px 10px;
+   }
+}
+section.landing .text h2 {
+   text-transform: uppercase;
+   margin-bottom: 20px;
+   font-weight: normal;
+}
+@media (max-width: 767px) {
+   section.landing .text h2 {
+      font-size: 20px;
+   }
+   section.landing .text p {
+      font-size: initial;
+      padding: 0 25px;
+   }
+}
+section.landing ul {
+   display: flex;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   bottom: 30px;
+   width: 80px;
+   justify-content: space-between;
+}
+section.landing ul li {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   border: 2px solid white;
+}
+section.landing ul li.active {
+   border-color: var(--main-color);
+   background-color: var(--main-color);
+}
+section.landing .angels {
+   color: white;
+   width: calc(100% - 30px);
+   position: absolute;
+   margin-left: 15px;
+   top: 50%;
+   transform: translateY(-50%);
+   display: flex;
+   justify-content: space-between;
+}
+/* End landing */
+/* Start services */
+section.services {
+   padding: var(--section-padding) 0;
+}
+section.services .services-content {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 40px;
+}
+section.services .services-content .srv-box {
+   width: calc(50% - 20px);
+   display: flex;
+}
+section.services .services-content .srv-box i {
+   margin-right: 40px;
+}
+@media (max-width: 767px) {
+   section.services .services-content {
+      flex-direction: column;
+   }
+   section.services .services-content .srv-box {
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+   }
+   section.services .services-content .srv-box i {
+      margin: 0 0 20px;
+   }
+}
+section.services .services-content .srv-box h3 {
+   font-weight: normal;
+   font-size: 25px;
+   color: var(--main-color);
+   margin: 0 0 20px;
+}
+section.services .services-content .srv-box p {
+   line-height: 2;
+   color: var(--p-color);
+   font-size: 18px;
+   max-width: 100%;
+}
+/* End services */
+/* Start design */
+section.design {
+   padding: var(--section-padding) 0;
+   background-image: url("../images/alexey-savchenko-k4Akpt5-Sfk-unsplash.jpg");
+   background-size: cover;
+   overflow: hidden;
+}
+section.design .container {
+   display: flex;
+   align-items: center;
+}
+section.design .container .text {
+   background-color: var(--transparent-background);
+   padding: 30px;
+   position: relative;
+}
+section.design .container .text::before {
+   content: "";
+   position: absolute;
+   height: 100%;
+   width: 1000%;
+   right: -1000%;
+   top: 0;
+   background-color: var(--transparent-background);
+}
+section.design .container .text h2 {
+   font-weight: normal;
+   text-transform: uppercase;
+   margin-bottom: 20px;
+   line-height: 1.6;
+}
+section.design .container .image,
+section.design .container .text {
+   flex: 1;
+   color: white;
+}
+@media (max-width: 767px) {
+   section.design .container .image {
+      display: none;
+   }
+   section.design .container {
+      padding: 0;
+   }
+}
+section.design .container .image img {
+   height: 500px;
+   position: relative;
+   bottom: -160px;
+}
+section.design .container .text ul li {
+   margin: 30px 0;
+   padding-left: 40px;
+   position: relative;
+}
+section.design .container .text ul li::before {
+   content: "";
+   width: 20px;
+   height: 12px;
+   border: 1px solid white;
+   position: absolute;
+   left: 0;
+   top: 2px;
+   border-radius: 3px;
+}
+section.design .container .text ul li::after {
+   content: "";
+   width: 10px;
+   height: 1px;
+   background-color: white;
+   position: absolute;
+   left: 6px;
+   top: 18px;
+}
+/* End design */
+/* Start Portfolio */
+section.portfolio {
+   padding: var(--section-padding) 0;
+}
+section.portfolio .container .shuffle {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 60px;
+   flex-wrap: wrap;
+   max-width: 100%;
+}
+section.portfolio .container .shuffle li.active,
+section.portfolio .container .shuffle li:hover {
+   background-color: var(--main-color);
+   color: white;
+   transition: 0.3s;
+}
+section.portfolio .container .shuffle li {
+   padding: 10px 25px;
+   cursor: pointer;
+}
+section.portfolio .imgs-container {
+   display: flex;
+   flex-wrap: wrap;
+}
+section.portfolio .imgs-container .box {
+   position: relative;
+   overflow: hidden;
+   cursor: pointer;
+}
+@media (min-width: 768px) {
+   section.portfolio .imgs-container .box {
+      width: 50%;
+   }
+}
+@media (min-width: 1199px) {
+   section.portfolio .imgs-container .box {
+      width: 25%;
+   }
+}
+section.portfolio .imgs-container .box .plus {
+   position: absolute;
+   color: transparent;
+   background-color: var(--transparent-background);
+   width: 0;
+   height: 0;
+   border-radius: 50%;
+   font-size: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-weight: normal;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, calc(-50% - 40px));
+   transition: 0.5s;
+   z-index: 2;
+}
+section.portfolio .imgs-container .box:hover .plus {
+   width: 100px;
+   height: 100px;
+   color: white;
+}
+section.portfolio .imgs-container .box img {
+   max-width: 100%;
+   transition: 0.5s;
+}
+section.portfolio .imgs-container .box:hover img {
+   transform: rotate(3deg) scale(1.1);
+}
+section.portfolio .imgs-container .box .caption {
+   padding: 20px;
+   position: absolute;
+   left: 0;
+   bottom: -100%;
+   background-color: white;
+   width: 100%;
+   transition: 0.5s;
+}
+section.portfolio .imgs-container .box:hover .caption {
+   bottom: 0;
+}
+section.portfolio .imgs-container .box .caption h3 {
+   margin-bottom: 10px;
+   font-weight: normal;
+   font-size: 20px;
+}
+section.portfolio .imgs-container .box .caption p {
+   color: var(--main-color);
+}
+section.portfolio .more {
+   color: white;
+   background-color: var(--main-color);
+   padding: 10px 25px;
+   text-decoration: none;
+   margin: 60px auto 0;
+   display: block;
+   width: fit-content;
+}
+/* End Portfolio */
+/* Start video */
+section.video {
+   position: relative;
+   display: flex;
+   align-items: center;
+}
+section.video video {
+   width: 100%;
+}
+section.video::before {
+   content: "";
+   position: absolute;
+   background-color: rgba(0, 0, 0, 0.63);
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+}
+section.video .text {
+   position: absolute;
+   background-color: var(--transparent-background);
+   width: 100%;
+   padding: 30px;
+   text-align: center;
+   line-height: 3;
+   color: white;
+}
+section.video .text h2 {
+   text-transform: uppercase;
+   font-weight: normal;
+}
+section.video .text button {
+   background-color: black;
+   color: inherit;
+   border: none;
+   padding: 8px 25px;
+   text-transform: uppercase;
+   font-size: 12px;
+}
+/* End video */
+/* Start about */
+section.about-sec {
+   padding: var(--section-padding) 0;
+   overflow: hidden;
+}
+section.about-sec img {
+   width: 60%;
+   position: relative;
+   left: 20%;
+   bottom: -120px;
+   margin-top: -120px;
+}
+@media (max-width: 767px) {
+   section.about-sec img {
+      width: 80%;
+      left: 10%;
+   }
+}
+/* End about */
+/* Start stats */
+section.stats {
+   background-image: url("../images/hao-wang-pVq6YhmDPtk-unsplash.jpg");
+   background-size: cover;
+   padding: var(--section-padding) 0;
+}
+section.stats .container {
+   color: white;
+   display: flex;
+   flex-wrap: wrap;
+   text-align: center;
+}
+section.stats .container .box {
+   background-color: var(--transparent-background);
+   padding: 30px;
+   line-height: 1.8;
+}
+@media (max-width: 767px) {
+   section.stats .container .box {
+      flex-basis: 100%;
+   }
+}
+@media (min-width: 768px) {
+   section.stats .container .box {
+      flex-basis: 50%;
+   }
+}
+@media (min-width: 992px) {
+   section.stats .container .box {
+      flex-basis: 25%;
+   }
+}
+section.stats .container .box i {
+   background-color: black;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+}
+section.stats .container .box .number {
+   font-size: 40px;
+   font-weight: bold;
+}
+/* End stats */
+/* Start skills */
+section.skills {
+   padding: var(--section-padding) 0;
+}
+section.skills .container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+@media (min-width: 992px) {
+   section.skills .container > div {
+      width: 45%;
+   }
+}
+section.skills .container > div > h3 {
+   font-weight: normal;
+   text-align: center;
+   text-transform: uppercase;
+}
+section.skills .container > div > p {
+   text-align: center;
+   margin: 20px 0 70px;
+   line-height: 1.8;
+   color: var(--p-color);
+}
+section.skills .container > div:last-child > p {
+   margin-bottom: 93px;
+}
+section.skills .container .testimonials .content {
+   display: flex;
+   margin-bottom: 30px;
+   align-items: center;
+   color: var(--p-color);
+   line-height: 1.8;
+}
+section.skills .container .testimonials .content img {
+   width: 100px;
+   clip-path: circle();
+   border-radius: 50%;
+   margin-right: 30px;
+}
+section.skills .container .testimonials .content p {
+   text-align: right;
+   border-bottom: 1px solid var(--p-color);
+   padding: 15px 0;
+}
+@media (max-width: 767px) {
+   section.skills .container .testimonials .content,
+   section.skills .container .testimonials .content p {
+      flex-direction: column;
+      text-align: center;
+   }
+   section.skills .container .testimonials .content img {
+      margin: 0;
+   }
+}
+section.skills .container .testimonials ul {
+   display: flex;
+   gap: 5px;
+   justify-content: center;
+   margin: 50px 0;
+}
+section.skills .container .testimonials ul li {
+   width: 14px;
+   height: 14px;
+   border: 1px solid var(--p-color);
+   border-radius: 50%;
+}
+section.skills .container .testimonials ul li.active {
+   border-color: var(--main-color);
+   background-color: var(--main-color);
+}
+section.skills .container .skills .prog-holder h4 {
+   font-weight: normal;
+   text-transform: uppercase;
+}
+section.skills .container .skills .prog-holder .prog {
+   height: 25px;
+   width: 100%;
+   background-color: #dbdbdb;
+   margin: 15px 0;
+   position: relative;
+}
+section.skills .container .skills .prog-holder .prog span {
+   height: 100%;
+   background-color: var(--main-color);
+   position: absolute;
+}
+section.skills .container .skills .prog-holder .prog span::before {
+   content: attr(data-progress);
+   position: absolute;
+   color: white;
+   background-color: #353235;
+   font-size: 12px;
+   padding: 5px;
+   right: 0;
+   transform: translate(50%, calc(-100% - 10px));
+   top: 0;
+}
+section.skills .container .skills .prog-holder .prog span::after {
+   content: "";
+   position: absolute;
+   border: 5px solid;
+   border-color: #353235 transparent transparent transparent;
+   right: 0;
+   transform: translate(50%, -100%);
+}
+/* End skills */
+/* Start quote */
+section.quote {
+   padding: var(--section-padding) 0;
+   background-image: url("../images/andyone--WW8jBak7bo-unsplash.jpg");
+   background-size: cover;
+   color: white;
+   position: relative;
+   text-align: center;
+}
+section.quote::before {
+   content: "";
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.521);
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+section.quote .container {
+   position: relative;
+}
+section.quote .container q {
+   font-size: 25px;
+   text-transform: uppercase;
+   line-height: 1.6;
+   display: inline-block;
+   margin-bottom: 15px;
+}
+/* End quote */
+/* Start pricing */
+section.pricing {
+   padding: var(--section-padding) 0;
+}
+section.pricing .plans {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+   gap: 30px;
+}
+section.pricing .plans .plan {
+   text-align: center;
+}
+section.pricing .plans .plan li:first-child {
+   padding: 50px 0 30px;
+   border: 1px solid;
+   border-color: var(--main-color) transparent;
+   position: relative;
+}
+section.pricing .plans .plan li:first-child::before {
+   content: attr(plan-name);
+   position: absolute;
+   top: 40px;
+   text-transform: uppercase;
+   transform: translateX(-50%);
+}
+section.pricing .plans .plan li:first-child .price {
+   font-size: 60px;
+   display: block;
+   margin: 25px 0 0 20px;
+}
+section.pricing .plans .plan li:first-child .price::before {
+   content: attr(currency);
+   font-size: 18px;
+   position: relative;
+   right: 10px;
+   bottom: 45px;
+}
+section.pricing .plans .plan li:first-child .price::after {
+   content: attr(time);
+   font-size: 14px;
+   position: relative;
+   left: 10px;
+   text-transform: uppercase;
+}
+section.pricing .plans .plan li:not(:last-child, :first-child) {
+   padding: 25px;
+   position: relative;
+}
+section.pricing
+   .plans
+   .plan
+   li:not(:last-child, :first-child, :nth-last-child(2))::before {
+   content: "";
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   bottom: 0;
+   background-color: var(--main-color);
+   width: 130px;
+   height: 1px;
+}
+section.pricing .plans .plan li:last-child {
+   border-top: 1px solid var(--main-color);
+   padding: 30px;
+}
+section.pricing .plans .plan li:last-child a {
+   text-decoration: none;
+   color: initial;
+}
+section.pricing .container > p {
+   text-align: center;
+   margin: 50px 0 40px;
+   font-size: 18px;
+}
+section.pricing .container > a {
+   display: block;
+   text-decoration: none;
+   background-color: var(--main-color);
+   width: fit-content;
+   margin: 0 auto;
+   padding: 10px 25px;
+   color: white;
+}
+/* End pricing */
+/* Start subscribe */
+section.subscribe {
+   background-image: url("../images/thought-catalog-505eectW54k-unsplash.jpg");
+   background-size: cover;
+   padding: var(--section-padding) 0;
+   position: relative;
+}
+section.subscribe::before {
+   position: absolute;
+   content: "";
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   background-color: rgba(0, 0, 0, 0.452);
+}
+section.subscribe .container {
+   display: flex;
+   align-items: center;
+   color: white;
+   position: relative;
+   line-height: 2;
+}
+section.subscribe .container form {
+   width: 600px;
+   max-width: 100%;
+   position: relative;
+   margin-right: 30px;
+}
+@media (max-width: 991px) {
+   section.subscribe .container {
+      flex-direction: column;
+      text-align: center;
+   }
+   section.subscribe .container form {
+      margin-bottom: 30px;
+      margin-right: 0;
+   }
+}
+section.subscribe .container form i {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   left: 20px;
+   font-size: 25px;
+}
+section.subscribe .container form input[type="email"] {
+   background: none;
+   border: 1px solid white;
+   height: 100%;
+   padding: 20px 20px 20px 60px;
+   width: 100%;
+   caret-color: var(--main-color);
+}
+section.subscribe .container form ::placeholder {
+   color: white;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+}
+section.subscribe .container form input[type="submit"] {
+   background-color: var(--main-color);
+   position: absolute;
+   height: 100%;
+   color: white;
+   right: 0;
+   padding: 0 15px;
+   text-transform: uppercase;
+   border: 1px solid white;
+   border-left: none;
+}
+section.subscribe .container form input[type]:focus {
+   outline: none;
+}
+/* End subscribe */
+/* Start contact */
+section.contact {
+   padding: var(--section-padding) 0;
+}
+section.contact .content {
+   display: flex;
+   justify-content: space-between;
+}
+@media (max-width: 767px) {
+   section.contact .content {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 30px;
+   }
+}
+section.contact .content form {
+   flex-basis: 70%;
+}
+section.contact .content form .main-input {
+   padding: 20px;
+   display: block;
+   margin-bottom: 30px;
+   width: 100%;
+   border: 1px solid #ccc;
+   caret-color: var(--main-color);
+}
+section.contact .content form textarea.main-input {
+   height: 200px;
+   resize: none;
+}
+section.contact .content form .main-input:focus {
+   border: 1px solid var(--main-color);
+   outline: none;
+}
+section.contact .content form .main-input::placeholder {
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+}
+section.contact .content form input[type="submit"] {
+   color: white;
+   background: var(--main-color);
+   padding: 20px;
+   display: flex;
+   text-transform: uppercase;
+   margin-left: auto;
+   border: none;
+}
+section.contact .content .info {
+   flex-basis: 25%;
+}
+section.contact .content .info h4 {
+   text-transform: uppercase;
+   font-weight: normal;
+   margin-bottom: 30px;
+}
+section.contact .content .info .phone {
+   display: block;
+   margin-bottom: 8px;
+   color: var(--p-color);
+}
+section.contact .content .info h4:last-of-type {
+   margin-top: 88px;
+}
+@media (max-width: 767px) {
+   section.contact .content .info h4:last-of-type {
+      margin-top: 30px;
+   }
+}
+section.contact .content .info address {
+   color: var(--p-color);
+   line-height: 2;
+}
+/* End contact */
+/* Start footer */
+footer {
+   padding: calc(var(--section-padding) / 2) 0;
+   text-align: center;
+   background: url("../images/andreas-brucker-g5Uh7nP60FA-unsplash.jpg");
+   background-size: cover;
+   position: relative;
+   color: white;
+}
+footer::before {
+   content: "";
+   position: absolute;
+   left: 0;
+   top: 0;
+   background-color: rgba(0, 0, 0, 0.589);
+   width: 100%;
+   height: 100%;
+}
+footer .container {
+   position: relative;
+}
+footer .container img {
+   height: 70px;
+}
+footer .container p:not(.copyright) {
+   text-transform: uppercase;
+   padding: 25px;
+   width: fit-content;
+   margin: 0 auto;
+   border-bottom: 1px solid white;
+}
+footer .container .social-icons i {
+   padding: 30px 10px 70px;
+}
+footer .container .copyright span {
+   color: var(--main-color);
+}
+/* End footer */
